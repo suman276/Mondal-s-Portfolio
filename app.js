@@ -1,7 +1,7 @@
 const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controlls');
 const sectBtn = document.querySelectorAll('.control');
-const allSections = document.querySelectorAll('.main-content');
+const allSections = document.querySelector('.main-content');
 
 function PageTransitions(){
   //button click active class
@@ -14,23 +14,23 @@ function PageTransitions(){
 }
 // section active class
     allSections.addEventListener('click', (e)=>{
-      console.log(e.target);
-      // const id=e.target.dataset.id;
-      //   if(id) {
-      //    //remove selected from other buttons
-      //     sectBtns.forEach((btn) =>{
-      //       btn.classList.remove('active');
-      //     })
-      //     e.target.classList.add('active');  
+      //console.log(e.target);
+      const id=e.target.dataset.id;
+        if(id) {
+         //remove selected from other buttons
+          sectBtns.forEach((btn) =>{
+            btn.classList.remove('active');
+          })
+          e.target.classList.add('active');  
           
-      //     //hide other sections
-      //     sections.forEach((section) =>{
-      //         section.classList.remove('active');
-      //       })
+          //hide other sections
+          sections.forEach((section) =>{
+              section.classList.remove('active');
+            })
             
-      //     const element= document.getElementById(id);
-      //     element.classList.add('active');
-      //   }
+          const element= document.getElementById(id);
+          element.classList.add('active');
+        }
     })
 }
 
